@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	 <parent>
-        <artifactId>hms</artifactId>
+        <artifactId>hms-parent</artifactId>
         <groupId>com.dishtavar.hms</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../hms</relativePath>
+       <!--  <relativePath>../hms</relativePath> -->
     </parent>
 	<artifactId>api</artifactId>
 	<name>api</name>
@@ -16,19 +16,14 @@
 		<java.version>1.8</java.version>
 	</properties>
 
-	<!-- <dependencies>
-		<dependency>
+	<dependencies>
+<!-- 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
+		</dependency>-->
+		<dependency> 
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.dishtavar.hms</groupId>
-			<artifactId>hms</artifactId>
-			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
@@ -36,15 +31,30 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies> -->
-
+	</dependencies>
+<!-- <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>2.1.9.RELEASE</version>
+            <scope>import</scope>
+            <type>pom</type>
+        </dependency>   
+    </dependencies>
+</dependencyManagement> -->
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <testFailureIgnore>true</testFailureIgnore>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>

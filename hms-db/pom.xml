@@ -3,14 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 <parent>
-        <artifactId>hms</artifactId>
+        <artifactId>hms-parent</artifactId>
         <groupId>com.dishtavar.hms</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../hms</relativePath>
     </parent>
-	<groupId>com.dishtavar.hms</groupId>
 	<artifactId>hms-db</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>hms-db</name>
 	<description>Demo project for Spring Boot</description>
 	
@@ -18,7 +15,7 @@
 		<java.version>1.8</java.version>
 	</properties>
 
-	<!-- <dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -27,19 +24,24 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.dishtavar.hms</groupId>
-			<artifactId>hms</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies> -->
-
+	</dependencies>
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>2.1.9.RELEASE</version>
+            <scope>import</scope>
+            <type>pom</type>
+        </dependency>   
+    </dependencies>
+</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
