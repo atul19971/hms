@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.dishtavar.hms.db.domain.User;
 /**
  * 
  * @author atulsingh
@@ -14,8 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
 @GetMapping(value = "/{id}")
-  public Long findById(@PathVariable("id") Long id) {
-      return id;
+  public User findById(@PathVariable("id") Long id) {
+	User user =new User("atul", "aaa", "atul", "singh");
+      return user;
   }
 	
 //	@GetMapping(value = "/{id}")
